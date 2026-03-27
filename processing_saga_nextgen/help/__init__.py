@@ -23,7 +23,7 @@ def loadShortHelp():
     for f in os.listdir(path):
         if f.endswith("yaml"):
             filename = os.path.join(path, f)
-            with codecs.open(filename, encoding="utf-8") as stream:
+            with open(filename, encoding="utf-8") as stream:
                 with warnings.catch_warnings():
                     warnings.filterwarnings("ignore", category=DeprecationWarning)
                     for k, v in yaml.load(stream, Loader=yaml.SafeLoader).items():
